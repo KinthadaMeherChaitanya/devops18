@@ -1,8 +1,8 @@
 resource "aws_launch_template" "web_server_as" {
     name = "myproject"
-    image_id           = "ami-00f251754ac5da7f0"
+    image_id           = "ami-0b86aaed8ef90e45f"
     instance_type = "t2.micro"
-    key_name = "mustafakey-pair"
+    key_name = "jenkins"
     
 }
    
@@ -11,7 +11,7 @@ resource "aws_launch_template" "web_server_as" {
   resource "aws_elb" "web_server_lb"{
      name = "web-server-lb"
      security_groups = [aws_security_group.web_server.id]
-     subnets = ["subnet-0883b34c988bcbf20", "subnet-0f4f4322d734fcc38"]
+     subnets = ["subnet-0cbf70dc7809926ad", "subnet-0df9f3f29af645832"]
      listener {
       instance_port     = 8000
       instance_protocol = "http"
