@@ -23,7 +23,13 @@ status = "Enabled"
 }
 }
 
-
+terraform {
+backend "s3" {
+region = "us-east-1"
+bucket = "meher-flm1"
+key = "prod/terraform.tfstate"
+}
+}
 
 
 
