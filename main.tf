@@ -3,6 +3,10 @@ resource "aws_launch_template" "web_server_as" {
     image_id           = "ami-0b86aaed8ef90e45f"
     instance_type = "t2.micro"
     key_name = "jenkins"
+    vpc_security_group_ids = [aws_security_group.web_server.id]
+    placement {
+    availability_zone = "us-east-1a, us-east-1b"
+    }
    
 }
    
