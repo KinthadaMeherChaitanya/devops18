@@ -13,7 +13,7 @@ resource "aws_launch_template" "web_server_as" {
      security_groups = [aws_security_group.web_server.id]
      subnets = ["subnet-0cbf70dc7809926ad", "subnet-0df9f3f29af645832"]
      listener {
-      instance_port     = 8000
+      instance_port     = 80
       instance_protocol = "http"
       lb_port           = 80
       lb_protocol       = "http"
